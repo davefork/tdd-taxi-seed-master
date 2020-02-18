@@ -16,9 +16,8 @@ public class TestMeter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assert.assertEquals("收费6元\n" +
-                "收费7元\n" +
-                "收费13元\n" +
-                "收费7元",meterString);
+        System.out.println(meterString);
+        String trueResult="price 6 yuan\n"  +"price 7 yuan\n" + "price 13 yuan\n" + "price 7 yuan\n";
+        Assert.assertEquals(trueResult,meterString);
     }
 }

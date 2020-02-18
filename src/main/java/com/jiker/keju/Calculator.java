@@ -12,12 +12,12 @@ public class Calculator {
     public static String meter(String testDataFile) throws IOException {
         BufferedReader meterReader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(testDataFile)), StandardCharsets.UTF_8));
         String meterString = null;
-        StringBuffer receipt = new StringBuffer();
+        String receipt = "";
         while ((meterString = meterReader.readLine()) != null) {
-            receipt.append("收费").append(calucatePrice(meterString)).append("元\n");
+            receipt = receipt + "price " + calucatePrice(meterString) + " yuan\n";
         }
         meterReader.close();
-        return receipt.toString();
+        return receipt;
     }
 
     private static String calucatePrice(String meterString) {
